@@ -112,21 +112,9 @@ export class AppointmentDragHelper extends DragHelper {
             try {
                 for (let i = 0; i < appointments.length; i++) {
                     const appointment = appointments[i];
-                    const appointmentData = {
-                        ...appointment,
-                        iconCls    : `b-fa b-fa-${appointment.iconCls}`,
-                        eventColor : appointment.eventColor || 'indigo'
-                    };
-
                     const { project } = this.scheduler;
-                    let existingEvent = project.eventStore.getById(appointment.id);
-
-                    if (!existingEvent) {
-                        existingEvent = project.eventStore.add(appointmentData)[0];
-                    }
-
                     await this.scheduler.scheduleEvent({
-                        eventRecord    : existingEvent,
+                        eventRecord    : project.eventStore.getById(appointment.id),
                         startDate      : i === 0 ? dropDate : appointments[i - 1].endDate,
                         resourceRecord : doctor
                     });

@@ -4,13 +4,12 @@ import { BryntumSchedulerPro, BryntumSplitter, BryntumToolbar
 import { SchedulerPro, SchedulerResourceModel } from '@bryntum/schedulerpro';
 import { schedulerConfig, projectConfig } from './AppConfig';
 import SchedulerToolbar from './components/SchedulerToolbar';
-import { UnplannedTasksGrid, type UnplannedTasksGridRef } from './components/UnplannedTasksGrid';
+import { UnplannedTasksGrid } from './components/UnplannedTasksGrid';
 import type { Appointment } from './lib/Appointment';
 import { Doctor } from './lib/Doctor';
 import './App.css';
 
 function App() {
-    const gridRef             = useRef<UnplannedTasksGridRef>(null);
     const schedulerRef        = useRef<BryntumSchedulerPro>(null);
     const schedulerToolbarRef = useRef<BryntumToolbar>(null);
 
@@ -74,7 +73,6 @@ function App() {
                     <p style={{ margin : '4px 0 0 0', fontSize : '12px', color : '#666' }}>Drag tasks to the scheduler to assign them</p>
                 </div>
                 <UnplannedTasksGrid
-                    ref={gridRef}
                     scheduler={scheduler}
                     onSelectionChange={onGridSelectionChange}
                 />

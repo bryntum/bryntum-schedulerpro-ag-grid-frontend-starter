@@ -14,9 +14,4 @@ export class Appointment extends EventModel {
         // override field defaultValue to hours
         { name : 'durationUnit', defaultValue : 'h' }
     ];
-
-    static defaults = {
-        // In this demo, default duration for sessions will be hours (instead of days)
-        durationUnit : 'h'
-    };
 }

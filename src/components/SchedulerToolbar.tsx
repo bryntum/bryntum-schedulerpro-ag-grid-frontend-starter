@@ -9,18 +9,15 @@ type SchedulerToolbarProps = {
 }
 
 const SchedulerToolbar = forwardRef<BryntumToolbar, SchedulerToolbarProps>((props, schedulerToolbarRef) => {
-    // Some variables used in this demo
     const startHour = 7;
     const endHour   = 20;
 
-    // destructure props
     const {
         schedulerRef,
         toggleLayout,
         setToggleLayout
     } = props;
 
-    // Save scheduler instance for easy access
     const [scheduler, setScheduler] = useState<SchedulerPro>();
 
     useEffect(() => {
