@@ -1,4 +1,4 @@
-# Integrate AG Grid with Bryntum Scheduler Pro - frontend
+# How to integrate a React AG Grid with a React Bryntum Scheduler Pro - frontend
 
 This starter project was generated using the [Vite](https://vite.dev/guide/) with TypeScript and React starter template.
 

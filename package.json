@@ -10,6 +10,10 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@bryntum/schedulerpro": "^6.3.0",
+    "@bryntum/schedulerpro-react": "^6.3.0",
+    "ag-grid-enterprise": "^34.1.0",
+    "ag-grid-react": "^34.1.0",
     "react": "^19.1.0",
     "react-dom": "^19.1.0"
   },
