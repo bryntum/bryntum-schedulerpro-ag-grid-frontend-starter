@@ -70,20 +70,6 @@ export const UnplannedTasksGrid = ({ scheduler, onSelectionChange }) => {
             )
         },
         {
-            headerName         : 'Patient',
-            field              : 'patient',
-            width              : 120,
-            editable           : true,
-            onCellValueChanged : (params) => {
-                handleUpdateEvent(params.data.id, { patient : params.newValue });
-            },
-            cellRenderer : ({ data }: { data: Appointment }) => (
-                <div>
-                    {data.patient}
-                </div>
-            )
-        },
-        {
             headerName       : 'Required role',
             field            : 'requiredRole',
             width            : 140,

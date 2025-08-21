@@ -32,7 +32,7 @@ export const projectConfig: ProjectModelConfig = {
 };
 
 export const schedulerConfig: BryntumSchedulerProProps = {
-    startDate           : new Date(2025, 9, 20, 7),
+    startDate           : new Date(2025, 9, 20, 9),
     endDate             : new Date(2025, 9, 20, 19),
     rowHeight           : 80,
     barMargin           : 10,
@@ -41,12 +41,12 @@ export const schedulerConfig: BryntumSchedulerProProps = {
     allowOverlap        : false,
     useInitialAnimation : false,
     // add path to images
-    resourceImagePath   : './users',
+    resourceImagePath   : 'http://localhost:5173/images/users/',
     columns             : [
         {
             type           : 'resourceInfo',
             text           : 'Doctor',
-            width          : 200,
+            width          : 230,
             showEventCount : false,
             showMeta       : ({ role, roleIconCls }) => `<i class="${roleIconCls}"></i>${role}`,
             filterable     : {
@@ -63,6 +63,7 @@ export const schedulerConfig: BryntumSchedulerProProps = {
         {
             type       : 'column',
             text       : 'Hours',
+            width      : 105,
             editor     : false,
             filterable : false,
             sortable   : false,
