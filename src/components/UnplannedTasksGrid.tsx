@@ -60,11 +60,11 @@ export const UnplannedTasksGrid = ({ scheduler, onSelectionChange }) => {
                 handleUpdateEvent(params.data.id, { name : params.newValue });
             },
             cellRenderer : ({ data }: { data: Appointment }) => (
-                <div style={{ display : 'flex', alignItems : 'center', padding : '8px 0' }}>
-                    <i className={`b-fa b-fa-${data.iconCls}`} style={{ marginRight : '8px' }} />
-                    <div>
-                        <div>{data.name}</div>
-                        <div style={{ fontSize : '12px', color : '#666' }}>Patient: {data.patient}</div>
+                <div style={{ display : 'flex', alignItems : 'center' }}>
+                    <i className={`b-fa b-fa-${data.iconCls}`} />
+                    <div style={{ display : 'flex', flexDirection : 'column', justifyContent : 'center', gap : '2px', minWidth : 0, flex : 1 }}>
+                        <span>{data.name}</span>
+                        <span style={{ fontSize : '12px', color : '#666' }}>Patient: {data.patient}</span>
                     </div>
                 </div>
             )
@@ -76,7 +76,12 @@ export const UnplannedTasksGrid = ({ scheduler, onSelectionChange }) => {
             editable           : true,
             onCellValueChanged : (params) => {
                 handleUpdateEvent(params.data.id, { patient : params.newValue });
-            }
+            },
+            cellRenderer : ({ data }: { data: Appointment }) => (
+                <div>
+                    {data.patient}
+                </div>
+            )
         },
         {
             headerName       : 'Required role',
@@ -90,8 +95,13 @@ export const UnplannedTasksGrid = ({ scheduler, onSelectionChange }) => {
             onCellValueChanged : (params) => {
                 handleUpdateEvent(params.data.id, { requiredRole : params.newValue });
             },
-            rowGroup : true,
-            hide     : false
+            rowGroup     : true,
+            hide         : false,
+            cellRenderer : ({ data }: { data: Appointment }) => (
+                <div>
+                    {data.requiredRole}
+                </div>
+            )
         },
         {
             headerName       : 'Duration',
@@ -108,9 +118,8 @@ export const UnplannedTasksGrid = ({ scheduler, onSelectionChange }) => {
                 handleUpdateEvent(params.data.id, { duration : params.newValue });
             },
             cellRenderer : ({ data }: { data: Appointment }) => (
-                <div style={{ textAlign : 'center', padding : '8px' }}>
-                    <i className="b-icon b-fa-clock" style={{ marginRight : '4px' }} />
-                    {data.duration} {data.durationUnit}
+                <div>
+                    {data.duration} {data.durationUnit}{data.duration === 1 ? '' : 's'}
                 </div>
             )
         }
@@ -150,7 +159,7 @@ export const UnplannedTasksGrid = ({ scheduler, onSelectionChange }) => {
                 getRowId={getRowId}
                 onSelectionChanged={handleSelectionChanged}
                 onGridReady={handleGridReady}
-                rowHeight={80}
+                rowHeight={65}
                 headerHeight={40}
                 rowGroupPanelShow="never"
                 groupDefaultExpanded={1}

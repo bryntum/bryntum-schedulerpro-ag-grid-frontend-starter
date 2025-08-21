@@ -186,3 +186,28 @@
       opacity: 1;
   }
 }
+
+.ag-row .ag-cell {
+  display: flex;
+  align-items: center;
+  line-height: normal;
+  padding: 0;
+}
+
+.ag-cell-not-inline-editing div {
+  padding-left: 1em;
+}
+
+.ag-cell div {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  min-width: 0;
+}
+
+.ag-cell span {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  min-width: 0;
+}
