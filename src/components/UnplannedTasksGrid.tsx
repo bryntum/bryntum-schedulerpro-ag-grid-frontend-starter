@@ -145,7 +145,7 @@ export const UnplannedTasksGrid = ({ scheduler, onSelectionChange }) => {
                 getRowId={getRowId}
                 onSelectionChanged={handleSelectionChanged}
                 onGridReady={handleGridReady}
-                rowHeight={65}
+                getRowHeight={params => params.node.group ? 45 : 65}
                 headerHeight={40}
                 rowGroupPanelShow="never"
                 groupDefaultExpanded={1}

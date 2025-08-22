@@ -211,3 +211,7 @@
   white-space: nowrap;
   min-width: 0;
 }
+
+.ag-row-group {
+  background-color: #fafbfc;
+}
