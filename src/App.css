@@ -215,3 +215,8 @@
 .ag-row-group {
   background-color: #fafbfc;
 }
+
+.ag-root-wrapper {
+  border-radius: 0;
+  border: none;
+}

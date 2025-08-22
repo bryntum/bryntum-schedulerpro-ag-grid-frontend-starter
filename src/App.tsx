@@ -68,8 +68,8 @@ function App() {
             </div>
             <BryntumSplitter/>
             <div className="grid-container">
-                <div style={{ padding : '10px', borderBottom : '1px solid #ddd' }}>
-                    <h3 style={{ fontSize : '14px', fontWeight : 'bold' }}>Unplanned Tasks</h3>
+                <div style={{ padding : '6px', borderBottom : '1px solid #ddd' }}>
+                    <h3 style={{ fontSize : '14px', fontWeight : 'bold' }}>Unplanned Tasks (AG Grid)</h3>
                     <p style={{ margin : '4px 0 0 0', fontSize : '12px', color : '#666' }}>Drag tasks to the scheduler to assign them</p>
                 </div>
                 <UnplannedTasksGrid
