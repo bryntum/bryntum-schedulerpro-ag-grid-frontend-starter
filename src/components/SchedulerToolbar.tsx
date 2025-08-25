@@ -10,7 +10,7 @@ type SchedulerToolbarProps = {
 
 const SchedulerToolbar = forwardRef<BryntumToolbar, SchedulerToolbarProps>((props, schedulerToolbarRef) => {
     const startHour = 7;
-    const endHour   = 20;
+    const endHour = 20;
 
     const {
         schedulerRef,

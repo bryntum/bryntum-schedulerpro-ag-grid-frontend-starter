@@ -10,10 +10,10 @@ import { Doctor } from './lib/Doctor';
 import './App.css';
 
 function App() {
-    const schedulerRef        = useRef<BryntumSchedulerPro>(null);
+    const schedulerRef = useRef<BryntumSchedulerPro>(null);
     const schedulerToolbarRef = useRef<BryntumToolbar>(null);
 
-    const [scheduler, setScheduler]       = useState<SchedulerPro>();
+    const [scheduler, setScheduler] = useState<SchedulerPro>();
     const [toggleLayout, setToggleLayout] = useState(false);
 
     useEffect(() => {
@@ -21,7 +21,7 @@ function App() {
     }, [schedulerRef]);
 
     const onSchedulerSelectionChange = useCallback(() => {
-        const selectedRecords       = scheduler!.selectedRecords as SchedulerResourceModel[];
+        const selectedRecords = scheduler!.selectedRecords as SchedulerResourceModel[];
         const { calendarHighlight } = scheduler!.features;
         if (selectedRecords.length > 0) {
             calendarHighlight.highlightResourceCalendars(selectedRecords);
