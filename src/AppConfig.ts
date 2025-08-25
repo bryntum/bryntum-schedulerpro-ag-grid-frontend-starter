@@ -48,8 +48,11 @@ export const schedulerConfig: BryntumSchedulerProProps = {
             text           : 'Doctor',
             width          : 230,
             showEventCount : false,
-            showMeta       : ({ role, roleIconCls }) => `<i class="${roleIconCls}"></i>${role}`,
-            filterable     : {
+            showMeta       : (resourceRecord) => {
+                const { role, roleIconCls } = resourceRecord as Doctor;
+                return `<i class="${roleIconCls}"></i>${role}`;
+            },
+            filterable : {
                 filterField : {
                     triggers : {
                         search : {
@@ -133,7 +136,7 @@ export const schedulerConfig: BryntumSchedulerProProps = {
             const doctor = newResource as Doctor;
             const { calendar } = doctor;
 
-            const valid = doctor.role === task.requiredRole && (!calendar || calendar.isWorkingTime(startDate, endDate, true));
+            const valid = doctor.role === task.requiredRole && (!calendar || (typeof calendar !== 'string' && calendar.isWorkingTime(startDate, endDate)));
             const message = valid ? '' : 'No available slot';
 
             return {

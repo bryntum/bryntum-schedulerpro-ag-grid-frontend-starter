@@ -96,7 +96,7 @@ export class AppointmentDragHelper extends DragHelper {
             newStartDate &&
       (!requiredRole || doctor?.role === requiredRole) &&
       (this.scheduler.allowOverlap || this.scheduler.isDateRangeAvailable(newStartDate, lastAppointmentEndDate, null, doctor)) &&
-      (!calendar || calendar.isWorkingTime(newStartDate, lastAppointmentEndDate, true))
+      (!calendar || calendar.isWorkingTime(newStartDate, lastAppointmentEndDate))
         );
 
         context.doctor = doctor;
